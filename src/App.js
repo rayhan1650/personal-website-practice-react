@@ -1,10 +1,12 @@
 import "./App.css";
+import Services from "./components/Services/Services";
 import TopBanner from "./components/TopBanner/TopBanner";
 
 function App() {
   return (
     <div>
       <TopBanner />
+      <Services />
     </div>
   );
 }

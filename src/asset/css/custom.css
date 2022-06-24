@@ -29,3 +29,16 @@
   font-weight: 600;
   font-size: 1.5rem;
 }
+
+.serviceMainTitle {
+  color: #0073e6;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.serviceName {
+  font-family: "Raleway", sans-serif;
+}
