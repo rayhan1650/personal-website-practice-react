@@ -1,0 +1,31 @@
+.topFixedBanner {
+  background-image: url("../images/banner.jpg");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.topBannerOverlay {
+  position: absolute;
+  min-height: 500px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.topContent {
+  margin-top: 12rem;
+}
+
+.topTitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.topSubTitle {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
