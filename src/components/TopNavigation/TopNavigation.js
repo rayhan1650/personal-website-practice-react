@@ -2,22 +2,30 @@ import React, { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 
 const TopNavigation = () => {
-  const [navBarTitle, setNavBarTitle] = useState("navTitle");
+  const [navBackground, setNavBackground] = useState("navBackground");
+  const [navTitle, setNavTitle] = useState("navTitle");
 
   const changeNavbar = () => {
     if (window.scrollY > 100) {
-      setNavBarTitle("navTitleScroll");
+      setNavBackground("navBackgroundScroll");
+      setNavTitle("navTitleScroll");
     } else {
-      setNavBarTitle("navTitle");
+      setNavBackground("navBackground");
+      setNavTitle("navTitle");
     }
   };
   window.addEventListener("scroll", changeNavbar);
 
   return (
     <>
-      <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar
+        className={navBackground}
+        fixed="top"
+        collapseOnSelect
+        expand="lg"
+      >
         <Container fluid>
-          <Navbar.Brand href="#home" className={navBarTitle}>
+          <Navbar.Brand href="#home" className={navTitle}>
             Rayhan
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />

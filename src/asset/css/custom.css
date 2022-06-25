@@ -43,6 +43,10 @@
   font-family: "Raleway", sans-serif;
 }
 
+.navBackground {
+  background-color: rgba(0, 0, 0, 0);
+}
+
 .navTitle {
   font-family: "Montserrat", sans-serif;
   color: white !important;
@@ -55,6 +59,10 @@
 .navTitle::before {
   content: url("../images/navlogo.svg");
   margin-right: 8px;
+}
+
+.navBackgroundScroll {
+  background-color: white;
 }
 
 .navTitleScroll {
