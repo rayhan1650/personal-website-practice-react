@@ -42,3 +42,17 @@
 .serviceName {
   font-family: "Raleway", sans-serif;
 }
+
+.navTitle {
+  font-family: "Montserrat", sans-serif;
+  color: white !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.navTitleScroll {
+  font-family: "Montserrat", sans-serif;
+  color: #0073e6 !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
