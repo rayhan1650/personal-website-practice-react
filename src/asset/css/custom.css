@@ -48,6 +48,13 @@
   color: white !important;
   font-weight: 700;
   font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.navTitle::before {
+  content: url("../images/navlogo.svg");
+  margin-right: 8px;
 }
 
 .navTitleScroll {
@@ -55,4 +62,11 @@
   color: #0073e6 !important;
   font-weight: 700;
   font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.navTitleScroll::before {
+  content: url("../images/navlogoScroll.svg");
+  margin-right: 8px;
 }
