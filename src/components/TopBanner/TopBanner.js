@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import "../../asset/css/custom.css";
 
 const TopBanner = () => {
   return (

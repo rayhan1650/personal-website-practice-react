@@ -99,3 +99,11 @@
   font-weight: 400;
   color: black !important;
 }
+
+.analysisText {
+  text-align: justify;
+  font-weight: 400;
+  color: black;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+}
