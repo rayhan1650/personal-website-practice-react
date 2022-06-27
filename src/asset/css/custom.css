@@ -107,3 +107,46 @@
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
 }
+
+.summaryBanner {
+  background-image: url("../images/banner.jpg");
+  min-height: 384px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.summaryBannerOverlay {
+  position: absolute;
+  min-height: 384px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.countNumber {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.countTitle {
+  font-weight: 600;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+}
+
+.cardTitle {
+  font-weight: 600 !important;
+  color: black;
+  font-family: "Raleway", sans-serif;
+}
+
+.cardSubtitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: black;
+}
