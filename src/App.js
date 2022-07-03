@@ -1,5 +1,6 @@
 import "./App.css";
 import Analysis from "./components/Analysis/Analysis";
+import Courses from "./components/Courses/Courses";
 import RecentProjects from "./components/RecentProjects/RecentProjects";
 import Services from "./components/Services/Services";
 import Summary from "./components/Summary/Summary";
@@ -15,6 +16,7 @@ function App() {
       <Analysis />
       <Summary />
       <RecentProjects />
+      <Courses />
     </div>
   );
 }
