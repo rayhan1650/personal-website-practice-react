@@ -12,6 +12,8 @@ const ClientReview = () => {
     dots: true,
     infinite: true,
     speed: 3000,
+    pauseOnHover: true,
+    arrows: false,
     vertical: true,
     verticalSwiping: true,
     slidesToShow: 1,
