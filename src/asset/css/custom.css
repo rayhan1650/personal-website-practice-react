@@ -151,9 +151,35 @@
   color: black;
 }
 
-.videoCard{
+.videoCard {
   box-shadow: 0 0 4px 0 rgba(0, 115, 230, 0.2);
   padding: 6rem 3rem;
   background-color: white;
   margin: 50px auto;
+}
+
+.topFixedPage {
+  background-image: url("../images/banner.jpg");
+  min-height: 300px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.topPageOverlay {
+  position: absolute;
+  min-height: 300px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.topPageContent {
+  margin-top: 9rem;
+}
+
+.topPageTitle {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
 }
