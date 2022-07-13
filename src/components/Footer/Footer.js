@@ -36,17 +36,22 @@ const Footer = () => {
           </Col>
           <Col lg={3} md={6} sm={12} className="p-5">
             <h2>Information</h2>
-            <a className="text-decoration-none text-secondary" href="#">
+            <Link className="text-decoration-none text-secondary" to="/about">
               About Me
-            </a>
+            </Link>
             <br />
-            <a className="text-decoration-none text-secondary" href="#">
+            <a
+              className="text-decoration-none text-secondary"
+              target="_blank"
+              rel="noreferrer"
+              href="https://drive.google.com/file/d/1EsvQcZ-IMCKBgL-W9drECCs8nlXJlaZL/view?usp=sharing"
+            >
               My Resume
             </a>
             <br />
-            <a className="text-decoration-none text-secondary" href="#">
+            <Link className="text-decoration-none text-secondary" to="/contact">
               Contact Me
-            </a>
+            </Link>
           </Col>
           <Col lg={3} md={6} sm={12} className="p-5">
             <h2>Legal</h2>
@@ -58,9 +63,9 @@ const Footer = () => {
               Terms and Condition
             </Link>
             <br />
-            <a className="text-decoration-none text-secondary" href="#">
+            <Link className="text-decoration-none text-secondary" to="/privacy">
               Privacy Policy
-            </a>
+            </Link>
           </Col>
         </Row>
       </Container>

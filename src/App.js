@@ -8,6 +8,8 @@ import ServicePage from "./pages/ServicePage";
 import { Routes, Route } from "react-router-dom";
 import RefundPage from "./pages/RefundPage";
 import TermPage from "./pages/TermPage";
+import PrivacyPage from "./pages/PrivacyPage";
+import ProjectDetailsPage from "./pages/ProjectDetailsPage";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/refund" element={<RefundPage />} />
         <Route path="/terms" element={<TermPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/projectDetails" element={<ProjectDetailsPage />} />
       </Routes>
     </div>
   );
