@@ -76,6 +76,7 @@
   -o-transition: background-color 400ms linear;
   transition: background-color 400ms linear;
   background-color: white;
+  box-shadow: 0 0 6px 0 rgba(0, 115, 230, 0.3);
 }
 
 .navTitleScroll {
