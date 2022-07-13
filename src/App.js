@@ -10,6 +10,7 @@ import RefundPage from "./pages/RefundPage";
 import TermPage from "./pages/TermPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import ProjectDetailsPage from "./pages/ProjectDetailsPage";
+import CourseDetailsPage from "./pages/CourseDetailsPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/terms" element={<TermPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/projectDetails" element={<ProjectDetailsPage />} />
+        <Route path="/courseDetails" element={<CourseDetailsPage />} />
       </Routes>
     </div>
   );

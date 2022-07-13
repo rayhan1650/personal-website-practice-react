@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const AllCourses = () => {
   return (
@@ -24,9 +25,9 @@ const AllCourses = () => {
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Voluptates veritatis cupiditate laudantium modi ipsa!
                   </p>
-                  <a className="btn btn-primary" href="#">
+                  <Link className="btn btn-primary" to="/courseDetails">
                     Details
-                  </a>
+                  </Link>
                 </div>
               </Col>
             </Row>
@@ -49,9 +50,9 @@ const AllCourses = () => {
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Voluptates veritatis cupiditate laudantium modi ipsa!
                   </p>
-                  <a className="btn btn-primary" href="#">
+                  <Link className="btn btn-primary" to="/courseDetails">
                     Details
-                  </a>
+                  </Link>
                 </div>
               </Col>
             </Row>
@@ -74,9 +75,9 @@ const AllCourses = () => {
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Voluptates veritatis cupiditate laudantium modi ipsa!
                   </p>
-                  <a className="btn btn-primary" href="#">
+                  <Link className="btn btn-primary" to="/courseDetails">
                     Details
-                  </a>
+                  </Link>
                 </div>
               </Col>
             </Row>
@@ -99,9 +100,9 @@ const AllCourses = () => {
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Voluptates veritatis cupiditate laudantium modi ipsa!
                   </p>
-                  <a className="btn btn-primary" href="#">
+                  <Link className="btn btn-primary" to="/courseDetails">
                     Details
-                  </a>
+                  </Link>
                 </div>
               </Col>
             </Row>
@@ -124,9 +125,9 @@ const AllCourses = () => {
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Voluptates veritatis cupiditate laudantium modi ipsa!
                   </p>
-                  <a className="btn btn-primary" href="#">
+                  <Link className="btn btn-primary" to="/courseDetails">
                     Details
-                  </a>
+                  </Link>
                 </div>
               </Col>
             </Row>
@@ -149,9 +150,9 @@ const AllCourses = () => {
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Voluptates veritatis cupiditate laudantium modi ipsa!
                   </p>
-                  <a className="btn btn-primary" href="#">
+                  <Link className="btn btn-primary" to="/courseDetails">
                     Details
-                  </a>
+                  </Link>
                 </div>
               </Col>
             </Row>
@@ -174,9 +175,9 @@ const AllCourses = () => {
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Voluptates veritatis cupiditate laudantium modi ipsa!
                   </p>
-                  <a className="btn btn-primary" href="#">
+                  <Link className="btn btn-primary" to="/courseDetails">
                     Details
-                  </a>
+                  </Link>
                 </div>
               </Col>
             </Row>
@@ -199,9 +200,9 @@ const AllCourses = () => {
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Voluptates veritatis cupiditate laudantium modi ipsa!
                   </p>
-                  <a className="btn btn-primary" href="#">
+                  <Link className="btn btn-primary" to="/courseDetails">
                     Details
-                  </a>
+                  </Link>
                 </div>
               </Col>
             </Row>
