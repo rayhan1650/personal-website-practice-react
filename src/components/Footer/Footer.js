@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 import { MdEmail, MdCall } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -49,9 +50,9 @@ const Footer = () => {
           </Col>
           <Col lg={3} md={6} sm={12} className="p-5">
             <h2>Legal</h2>
-            <a className="text-decoration-none text-secondary" href="#">
+            <Link className="text-decoration-none text-secondary" to="/refund">
               Refund Policy
-            </a>
+            </Link>
             <br />
             <a className="text-decoration-none text-secondary" href="#">
               Terms and Condition
