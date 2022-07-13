@@ -3,6 +3,7 @@ import Analysis from "../components/Analysis/Analysis";
 import ClientReview from "../components/ClientReview/ClientReview";
 import Courses from "../components/Courses/Courses";
 import Footer from "../components/Footer/Footer";
+import PageTitle from "../components/PageTitle/PageTitle";
 import RecentProjects from "../components/RecentProjects/RecentProjects";
 import Services from "../components/Services/Services";
 import Summary from "../components/Summary/Summary";
@@ -13,6 +14,7 @@ import Video from "../components/Video/Video";
 const HomePage = () => {
   return (
     <>
+      <PageTitle title="Home" />
       <TopNavigation />
       <TopBanner />
       <Services />

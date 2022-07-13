@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
-const PageTop = () => {
+const PageTop = ({ topHeading }) => {
   return (
     <>
       <Container fluid className="topFixedPage p-0">
@@ -9,7 +9,7 @@ const PageTop = () => {
           <Container className="topPageContent">
             <Row>
               <Col className="text-white text-center">
-                <h4 className="topPageTitle">About Me</h4>
+                <h4 className="topPageTitle">{topHeading}</h4>
               </Col>
             </Row>
           </Container>
