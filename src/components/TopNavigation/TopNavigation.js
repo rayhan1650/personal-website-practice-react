@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../../asset/css/custom.css";
 
 const TopNavigation = () => {
@@ -29,28 +30,28 @@ const TopNavigation = () => {
         expand="lg"
       >
         <Container fluid>
-          <Navbar.Brand href="#home" className={navTitle}>
+          <Navbar.Brand as={Link} to="/home" className={navTitle}>
             Rayhan
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link className={navItem} href="#">
+              <Nav.Link as={Link} className={navItem} to="/">
                 HOME
               </Nav.Link>
-              <Nav.Link className={navItem} href="#">
+              <Nav.Link as={Link} className={navItem} to="/services">
                 SERVICES
               </Nav.Link>
-              <Nav.Link className={navItem} href="#">
+              <Nav.Link as={Link} className={navItem} to="/courses">
                 COURSES
               </Nav.Link>
-              <Nav.Link className={navItem} href="#">
+              <Nav.Link as={Link} className={navItem} to="/portfolio">
                 PORTFOLIO
               </Nav.Link>
-              <Nav.Link className={navItem} href="#">
+              <Nav.Link as={Link} className={navItem} to="/contact">
                 CONTACT
               </Nav.Link>
-              <Nav.Link className={navItem} href="#">
+              <Nav.Link as={Link} className={navItem} to="/about">
                 ABOUT
               </Nav.Link>
             </Nav>

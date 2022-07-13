@@ -5,9 +5,9 @@ import { MdEmail, MdCall } from "react-icons/md";
 const ContactSection = () => {
   return (
     <>
-      <Container>
+      <Container className="mt-5">
         <Row>
-          <Col lg={6} md={6} sm={12}>
+          <Col lg={6} md={6} sm={12} className="p-2">
             <h2>Quick Connect</h2>
             <Form>
               <Form.Group className="mb-3">
@@ -28,7 +28,7 @@ const ContactSection = () => {
               </Button>
             </Form>
           </Col>
-          <Col lg={6} md={6} sm={12}>
+          <Col lg={6} md={6} sm={12} className="p-2">
             <h2>Discuss Now</h2>
             <p className="mb-0 text-secondary">
               Ward 06, Monohardi Pauroshava, Narsingdi

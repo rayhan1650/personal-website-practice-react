@@ -30,6 +30,11 @@
   font-size: 1.5rem;
 }
 
+.customLink {
+  text-decoration: none !important;
+  color: "#1e90ff";
+}
+
 .serviceMainTitle {
   color: #0073e6;
   margin-top: 5rem;
