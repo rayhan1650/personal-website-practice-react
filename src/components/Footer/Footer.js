@@ -54,9 +54,9 @@ const Footer = () => {
               Refund Policy
             </Link>
             <br />
-            <a className="text-decoration-none text-secondary" href="#">
+            <Link className="text-decoration-none text-secondary" to="/terms">
               Terms and Condition
-            </a>
+            </Link>
             <br />
             <a className="text-decoration-none text-secondary" href="#">
               Privacy Policy

@@ -7,6 +7,7 @@ import PortfolioPage from "./pages/PortfolioPage";
 import ServicePage from "./pages/ServicePage";
 import { Routes, Route } from "react-router-dom";
 import RefundPage from "./pages/RefundPage";
+import TermPage from "./pages/TermPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/refund" element={<RefundPage />} />
+        <Route path="/terms" element={<TermPage />} />
       </Routes>
     </div>
   );
