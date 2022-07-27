@@ -22,7 +22,7 @@ const TopBanner = () => {
         // always executed
       });
   }, []);
-  console.log(homeTitle);
+  // console.log(homeTitle);
 
   return (
     <Fragment>
