@@ -21,6 +21,51 @@ const AppUrl = () => {
   const totalProjectClient = `${baseUrl}/totalProjectClient`;
   const techDesc = `${baseUrl}/techDesc`;
   const homeTopTitle = `${baseUrl}/homeTopTitle`;
+
+  //   const urlArray = [
+  //     chartData,
+  //     clientReview,
+  //     contactSend,
+  //     courseHome,
+  //     courseAll,
+  //     courseDetails,
+  //     footer,
+  //     information,
+  //     services,
+  //     projectsHome,
+  //     projectsAll,
+  //     projectsDetails,
+  //     videoHome,
+  //     totalProjectClient,
+  //     techDesc,
+  //     homeTopTitle,
+  //   ];
+
+  //   for (let url of urlArray) {
+  //     // console.log(url.split("/")[3]);
+  //     if (url.split("/")[3] === getUrl) {
+  //       return url;
+  //     }
+  //   }
+
+  return {
+    chartData,
+    clientReview,
+    contactSend,
+    courseHome,
+    courseAll,
+    courseDetails,
+    footer,
+    information,
+    services,
+    projectsHome,
+    projectsAll,
+    projectsDetails,
+    videoHome,
+    totalProjectClient,
+    techDesc,
+    homeTopTitle,
+  };
 };
 
 export default AppUrl;

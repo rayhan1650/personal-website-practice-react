@@ -1,18 +1,27 @@
 import axios from "axios";
 import React, { Fragment } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 const TopBanner = () => {
-  axios
-    .get("http://localhost:8000/homeTopTitle")
-    .then(function (response) {
-      // handle success
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    });
+  const [homeTitle, setHomeTitle] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/homeTopTitle")
+      .then(function (response) {
+        // handle success
+        setHomeTitle(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+  }, []);
 
   return (
     <Fragment>
@@ -21,8 +30,8 @@ const TopBanner = () => {
           <Container className="topContent">
             <Row>
               <Col className="text-white text-center">
-                <h1 className="topTitle">SOFTWARE ENGINEER</h1>
-                <h4 className="topSubTitle">Mobile & Web Application</h4>
+                <h1 className="topTitle">{homeTitle[0].home_title}</h1>
+                <h4 className="topSubTitle">{homeTitle[0].home_subtitle}</h4>
                 <Button variant="primary">More Info</Button>
               </Col>
             </Row>
