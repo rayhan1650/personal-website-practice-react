@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 
 const TopBanner = () => {
-  const [homeTitle, setHomeTitle] = useState("");
+  const [homeTitle, setHomeTitle] = useState([]);
 
   useEffect(() => {
     axios
@@ -22,6 +22,7 @@ const TopBanner = () => {
         // always executed
       });
   }, []);
+  console.log(homeTitle);
 
   return (
     <Fragment>
@@ -30,8 +31,8 @@ const TopBanner = () => {
           <Container className="topContent">
             <Row>
               <Col className="text-white text-center">
-                <h1 className="topTitle">{homeTitle[0].home_title}</h1>
-                <h4 className="topSubTitle">{homeTitle[0].home_subtitle}</h4>
+                <h1 className="topTitle">{homeTitle[0]?.home_title}</h1>
+                <h4 className="topSubTitle">{homeTitle[0]?.home_subtitle}</h4>
                 <Button variant="primary">More Info</Button>
               </Col>
             </Row>
