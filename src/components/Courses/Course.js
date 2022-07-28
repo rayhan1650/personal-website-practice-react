@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Course = ({ course }) => {
   const { small_img, short_title, short_description } = course;
   return (
-    <Col className="px-3" lg={6} md={12} sm={12}>
+    <Col className="p-3" lg={6} md={12} sm={12}>
       <Row className="border shadow">
         <Col lg={6} md={6} sm={12}>
           <div>
