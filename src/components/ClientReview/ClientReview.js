@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { Col, Container, Row } from "react-bootstrap";
-import Client from "../../asset/images/rayhan.jpg";
+import { Container } from "react-bootstrap";
+import axios from "axios";
+import Review from "./Review";
 
 const ClientReview = () => {
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/clientReview")
+      .then(function (response) {
+        // handle success
+        setReviews(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+  }, []);
+  console.log(reviews);
+
   let settings = {
     autoplay: true,
     autoplaySpeed: 3000,
@@ -52,75 +72,9 @@ const ClientReview = () => {
           Client Says
         </h1>
         <Slider {...settings}>
-          <div>
-            <Row className="text-center">
-              <Col className="mx-auto" lg={6} md={6} sm={12}>
-                <div>
-                  <img
-                    width={100}
-                    className="rounded-circle mx-auto border border-primary"
-                    src={Client}
-                    alt="Profile pic"
-                  />
-                </div>
-
-                <h2>Web Development</h2>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Quaerat nemo voluptatum, minima animi qui, reprehenderit
-                  quidem eligendi impedit voluptate alias laboriosam.
-                  Exercitationem odit voluptas qui alias doloremque? Impedit, et
-                  animi.
-                </p>
-              </Col>
-            </Row>
-          </div>
-          <div>
-            <Row className="text-center">
-              <Col className="mx-auto" lg={6} md={6} sm={12}>
-                <div>
-                  <img
-                    width={100}
-                    className="rounded-circle mx-auto border border-primary"
-                    src={Client}
-                    alt="Profile pic"
-                  />
-                </div>
-
-                <h2>Web Development</h2>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Quaerat nemo voluptatum, minima animi qui, reprehenderit
-                  quidem eligendi impedit voluptate alias laboriosam.
-                  Exercitationem odit voluptas qui alias doloremque? Impedit, et
-                  animi.
-                </p>
-              </Col>
-            </Row>
-          </div>
-          <div>
-            <Row className="text-center">
-              <Col className="mx-auto" lg={6} md={6} sm={12}>
-                <div>
-                  <img
-                    width={100}
-                    className="rounded-circle mx-auto border border-primary"
-                    src={Client}
-                    alt="Profile pic"
-                  />
-                </div>
-
-                <h2>Web Development</h2>
-                <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Quaerat nemo voluptatum, minima animi qui, reprehenderit
-                  quidem eligendi impedit voluptate alias laboriosam.
-                  Exercitationem odit voluptas qui alias doloremque? Impedit, et
-                  animi.
-                </p>
-              </Col>
-            </Row>
-          </div>
+          {reviews?.map((review) => (
+            <Review key={review.id} review={review} />
+          ))}
         </Slider>
       </Container>
     </>
