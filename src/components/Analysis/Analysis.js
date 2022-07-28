@@ -5,13 +5,29 @@ import { ResponsiveContainer, BarChart, Bar, XAxis, Tooltip } from "recharts";
 
 const Analysis = () => {
   const [data, setData] = useState([]);
-
+  const [desc, setDesc] = useState([]);
   useEffect(() => {
     axios
       .get("http://localhost:8000/chartData")
       .then(function (response) {
         // handle success
         setData(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/techDesc")
+      .then(function (response) {
+        // handle success
+        setDesc(response.data);
       })
       .catch(function (error) {
         // handle error
@@ -73,20 +89,7 @@ const Analysis = () => {
             </ResponsiveContainer>
           </Col>
           <Col lg={6} md={12} sm={12}>
-            <p className="analysisText">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-              beatae reiciendis dignissimos ea delectus sapiente iure atque
-              corporis doloribus veritatis, officiis dolor, hic aspernatur earum
-              mollitia eveniet rem velit dolores alias maxime. Maxime quasi amet
-              aspernatur unde illum iusto beatae, porro numquam dolor?
-              Laudantium temporibus rerum esse ratione modi! Quibusdam sapiente,
-              enim repellendus perferendis optio suscipit! Hic quis numquam,
-              tempora saepe ullam sapiente quidem modi ad dolore adipisci
-              dolores fuga asperiores eveniet, ea eius totam. Et repellendus,
-              aspernatur vel provident laborum, animi nihil sequi placeat modi
-              mollitia tempore quo inventore corporis! Eos architecto doloribus
-              distinctio vero, quos alias magnam dolores.
-            </p>
+            <p className="analysisText">{desc[0]?.tech_description}</p>
           </Col>
         </Row>
       </Container>
