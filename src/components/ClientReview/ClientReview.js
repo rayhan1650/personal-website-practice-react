@@ -24,7 +24,7 @@ const ClientReview = () => {
         // always executed
       });
   }, []);
-  console.log(reviews);
+  // console.log(reviews);
 
   let settings = {
     autoplay: true,
