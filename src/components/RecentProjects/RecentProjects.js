@@ -21,7 +21,7 @@ const RecentProjects = () => {
         // always executed
       });
   }, []);
-  console.log(projects);
+  // console.log(projects);
   return (
     <>
       <Container className="mx-auto">
