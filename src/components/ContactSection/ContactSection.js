@@ -21,6 +21,28 @@ const ContactSection = () => {
         // always executed
       });
   }, []);
+
+  const sendContact = () => {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+    let obj = {
+      name,
+      email,
+      message,
+    };
+    console.log(name, email, message);
+    axios
+      .post("http://localhost:8000/contactSend", JSON.stringify(obj), {
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
   return (
     <>
       <Container className="mt-5">
@@ -30,18 +52,18 @@ const ContactSection = () => {
             <Form>
               <Form.Group className="mb-3">
                 <Form.Label>Name</Form.Label>
-                <Form.Control type="text" />
+                <Form.Control type="text" id="name" />
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" />
+                <Form.Control type="email" id="email" />
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Message</Form.Label>
-                <Form.Control as="textarea" rows="3" />
+                <Form.Control as="textarea" rows="3" id="message" />
               </Form.Group>
 
-              <Button variant="primary" type="submit">
+              <Button onClick={sendContact} variant="primary">
                 Submit
               </Button>
             </Form>
