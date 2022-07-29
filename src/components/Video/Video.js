@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import { FaPlayCircle } from "react-icons/fa";
 import { BigPlayButton, Player } from "video-react";
@@ -10,6 +11,24 @@ const Video = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [videoInfo, setVideoInfo] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/videoHome")
+      .then(function (response) {
+        // handle success
+        setVideoInfo(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+  }, []);
+
   return (
     <>
       <Container>
@@ -17,14 +36,7 @@ const Video = () => {
           <Col className="videoCard text-center">
             <div>
               <h3 className="text-primary ">How I Do</h3>
-              <p className="fs-5">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Facilis fuga natus, fugiat saepe ipsa ullam odit porro impedit
-                numquam vel! Eius earum atque pariatur amet quisquam itaque
-                corrupti dolore voluptates!Facilis fuga natus, fugiat saepe ipsa
-                ullam odit porro impedit numquam vel! Eius earum atque pariatur
-                amet quisquam itaque corrupti dolore voluptates!
-              </p>
+              <p className="fs-5">{videoInfo[0]?.video_description}</p>
               <p className="btn p-0">
                 <FaPlayCircle
                   onClick={handleShow}
@@ -38,7 +50,7 @@ const Video = () => {
       <Modal size="lg" show={show} onHide={handleClose}>
         <Modal.Body>
           <Player>
-            <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
+            <source src={videoInfo[0]?.video_url} />
             <BigPlayButton position="center" />
           </Player>
         </Modal.Body>
