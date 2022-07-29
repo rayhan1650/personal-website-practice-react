@@ -1,5 +1,5 @@
 import React from "react";
-import ContactSection from "../components/ContactSecton/ContactSection";
+import ContactSection from "../components/ContactSection/ContactSection";
 import Footer from "../components/Footer/Footer";
 import PageTitle from "../components/PageTitle/PageTitle";
 import PageTop from "../components/PageTop/PageTop";

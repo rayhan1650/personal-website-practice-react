@@ -1,37 +1,63 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 import { MdEmail, MdCall } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const [footerInfo, setFooterInfo] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8000/footer")
+      .then(function (response) {
+        // handle success
+        setFooterInfo(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+  }, []);
   return (
     <>
       <Container fluid className="mt-5 border shadow">
         <Row>
           <Col lg={3} md={6} sm={12} className="p-5">
             <h2>Follow Me</h2>
-            <a className="text-decoration-none" href="#">
+            <a
+              className="text-decoration-none"
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.facebook.com/nurmohammad.rayhan.9/"
+            >
               <FaFacebook /> Facebook
             </a>
             <br />
-            <a className="text-decoration-none" href="#">
+            <a
+              className="text-decoration-none"
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.youtube.com/"
+            >
               <FaYoutube className="text-danger" /> YouTube
             </a>
           </Col>
           <Col lg={3} md={6} sm={12} className="py-5 ps-5">
             <h2>Address</h2>
-            <p className="mb-0 text-secondary">
-              Ward 06, Monohardi Pauroshava, Narsingdi
-            </p>
+            <p className="mb-0 text-secondary">{footerInfo[0]?.address}</p>
             <small className="text-secondary">
               <MdEmail className="me-1" />
-              rayhannurmd@gmail.com
+              {footerInfo[0]?.email}
             </small>
             <br />
             <small className="text-secondary">
               <MdCall className="me-1" />
-              01521211324
+              {footerInfo[0]?.phone}
             </small>
           </Col>
           <Col lg={3} md={6} sm={12} className="p-5">
@@ -70,7 +96,7 @@ const Footer = () => {
         </Row>
       </Container>
       <Container fluid className="text-center bg-primary py-3 text-white">
-        <small>Rayhan &copy; All Right Reserved</small>
+        <small>{footerInfo[0]?.footer_credit}</small>
       </Container>
     </>
   );
