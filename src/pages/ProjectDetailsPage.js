@@ -9,6 +9,11 @@ import TopNavigation from "../components/TopNavigation/TopNavigation";
 
 const ProjectDetailsPage = () => {
   const { id } = useParams();
+  const [pName, setPName] = useState("");
+  const getName = (name) => {
+    setPName(name);
+  };
+
   // const [projects, setProjects] = useState([]);
   // const url = `http://localhost:8000/projectsDetails/${id}`;
 
@@ -31,8 +36,8 @@ const ProjectDetailsPage = () => {
     <>
       <PageTitle title="Project Details" />
       <TopNavigation />
-      <PageTop topHeading="Project Name" />
-      <ProjectDetails id={id} />
+      <PageTop topHeading={pName} />
+      <ProjectDetails id={id} getName={getName} />
       <Footer />
     </>
   );

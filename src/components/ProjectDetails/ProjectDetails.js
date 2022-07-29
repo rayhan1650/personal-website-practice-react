@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const ProjectDetails = ({ id }) => {
+const ProjectDetails = ({ id, getName }) => {
   const [projects, setProjects] = useState([]);
   const url = `http://localhost:8000/projectsDetails/${id}`;
 
@@ -28,6 +28,7 @@ const ProjectDetails = ({ id }) => {
   //   projects_name,
   //   projects_sort_desc,
   // } = projects;
+  getName(projects[0]?.projects_name);
 
   const features = projects[0]?.projects_features?.split(".");
   return (
