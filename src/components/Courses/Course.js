@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Course = ({ course }) => {
-  const { small_img, short_title, short_description } = course;
+  const { id, small_img, short_title, short_description } = course;
   return (
     <Col className="p-3" lg={6} md={12} sm={12}>
       <Row className="border shadow">
@@ -16,7 +16,7 @@ const Course = ({ course }) => {
           <div>
             <h5>{short_title}</h5>
             <p>{short_description}</p>
-            <Link className="btn btn-primary" to="/courseDetails">
+            <Link className="btn btn-primary" to={`/courseDetails/${id}`}>
               Details
             </Link>
           </div>

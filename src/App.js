@@ -27,7 +27,7 @@ function App() {
         <Route path="/terms" element={<TermPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/projectDetails/:id" element={<ProjectDetailsPage />} />
-        <Route path="/courseDetails" element={<CourseDetailsPage />} />
+        <Route path="/courseDetails/:id" element={<CourseDetailsPage />} />
       </Routes>
     </div>
   );
