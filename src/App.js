@@ -26,7 +26,7 @@ function App() {
         <Route path="/refund" element={<RefundPage />} />
         <Route path="/terms" element={<TermPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
-        <Route path="/projectDetails" element={<ProjectDetailsPage />} />
+        <Route path="/projectDetails/:id" element={<ProjectDetailsPage />} />
         <Route path="/courseDetails" element={<CourseDetailsPage />} />
       </Routes>
     </div>

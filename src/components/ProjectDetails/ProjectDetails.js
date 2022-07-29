@@ -1,7 +1,35 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const ProjectDetails = () => {
+const ProjectDetails = ({ id }) => {
+  const [projects, setProjects] = useState([]);
+  const url = `http://localhost:8000/projectsDetails/${id}`;
+
+  useEffect(() => {
+    axios
+      .get(url)
+      .then(function (response) {
+        // handle success
+        setProjects(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+  }, [url]);
+  // const {
+  //   projects_img_details,
+  //   projects_live_url,
+  //   projects_name,
+  //   projects_sort_desc,
+  // } = projects;
+
+  const features = projects[0]?.projects_features?.split(".");
   return (
     <>
       <Container className="mt-5">
@@ -9,30 +37,26 @@ const ProjectDetails = () => {
           <Col lg={6} md={6} sm={12}>
             <img
               className="w-100"
-              src="https://cdn.foodbeast.com/content/uploads/2016/02/IMG_0595.jpg"
+              src={projects[0]?.projects_img_details}
               alt="project Img"
             />
           </Col>
           <Col lg={6} md={6} sm={12}>
-            <h2>Foll Bazzar</h2>
-            <p className="fs-5">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-              commodi! Consectetur quas dicta perferendis doloremque quo
-              incidunt quam molestias id nesciunt deleniti magni quos vero eos
-              ex praesentium, laudantium omnis.
-            </p>
+            <h2>{projects[0]?.projects_name}</h2>
+            <p className="fs-5">{projects[0]?.projects_sort_desc}</p>
             <ul>
-              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+              {features?.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
             </ul>
-            <Button>Live Preview</Button>
+            <a
+              href={projects[0]?.projects_live_url}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-primary"
+            >
+              Live Preview
+            </a>
           </Col>
         </Row>
       </Container>

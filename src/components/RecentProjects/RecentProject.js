@@ -3,14 +3,7 @@ import { Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const RecentProject = ({ project }) => {
-  const {
-    projects_features,
-    projects_img,
-    projects_img_details,
-    projects_live_url,
-    projects_name,
-    projects_sort_desc,
-  } = project;
+  const { id, projects_img, projects_name, projects_sort_desc } = project;
   return (
     <Col lg={4} md={6} sm={12}>
       <Card className="shadow">
@@ -18,7 +11,7 @@ const RecentProject = ({ project }) => {
         <Card.Body>
           <Card.Title>{projects_name}</Card.Title>
           <Card.Text>{projects_sort_desc}</Card.Text>
-          <Link className="btn btn-primary" to="/projectDetails">
+          <Link className="btn btn-primary" to={`/projectDetails/${id}`}>
             Details
           </Link>
         </Card.Body>
