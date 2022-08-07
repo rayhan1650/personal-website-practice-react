@@ -11,7 +11,7 @@ const CourseDetailsPage = () => {
     <>
       <PageTitle title="Course Details" />
       <TopNavigation />
-      <CourseDetails />
+      <CourseDetails id={id} />
       <Footer />
     </>
   );

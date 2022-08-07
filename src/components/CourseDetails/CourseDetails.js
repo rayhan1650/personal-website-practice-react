@@ -1,9 +1,39 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { TiTick } from "react-icons/ti";
 import { BigPlayButton, Player } from "video-react";
 
-const CourseDetails = () => {
+const CourseDetails = ({ id }) => {
+  const [courseDetails, setCourseDetails] = useState([]);
+  const [video, setVideo] = useState(
+    "https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+  );
+  const url = `http://localhost:8000/courseDetails/${id}`;
+
+  useEffect(() => {
+    axios
+      .get(url)
+      .then(function (response) {
+        // handle success
+        setCourseDetails(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+  }, [url]);
+
+  useEffect(() => {
+    courseDetails && setVideo(courseDetails[0]?.video_url);
+  }, []);
+
+  //console.log(courseDetails[0]?.video_url);
+
+  const features = courseDetails[0]?.skills_all?.split(". ");
   return (
     <>
       <Container fluid className="topFixedPage p-0">
@@ -11,21 +41,17 @@ const CourseDetails = () => {
           <Container className="topPageContent">
             <Row>
               <Col lg={6} md={6} sm={12}>
-                <h3 className="text-white">
-                  Full Dynamic Website With Admin Panel.
-                </h3>
-                <h6 className="text-warning">Total Lectures=30</h6>
-                <h6 className="text-warning">Total Students=30</h6>
+                <h3 className="text-white">{courseDetails[0]?.long_title}</h3>
+                <h6 className="text-warning">
+                  Total Lectures={courseDetails[0]?.total_lecture}
+                </h6>
+                <h6 className="text-warning">
+                  Total Students={courseDetails[0]?.total_student}
+                </h6>
               </Col>
               <Col lg={6} md={6} sm={12}>
                 <p className="text-white analysisText">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Tenetur aliquam beatae iste adipisci error ipsa fugit modi
-                  cupiditate expedita labore saepe, voluptatibus illo dolore
-                  omnis laborum laudantium dolores ex tempore eum hic! In
-                  deleniti saepe ea corporis ut vero dolores odio aliquam
-                  perferendis inventore? Maxime voluptatem recusandae fugiat at
-                  possimus dicta vero dolorum et alias neque impedit.
+                  {courseDetails[0]?.long_description}
                 </p>
               </Col>
             </Row>
@@ -37,32 +63,25 @@ const CourseDetails = () => {
           <Col lg={6} md={6} sm={12}>
             <h3>Skill You Get</h3>
             <div className="cardSubtitle">
-              <p>
-                <TiTick className="text-white bg-primary rounded-circle me-1" />
-                Unlimited dynamic product category.
-              </p>
-              <p>
-                <TiTick className="text-white bg-primary rounded-circle me-1" />
-                System Analysis
-              </p>
-              <p>
-                <TiTick className="text-white bg-primary rounded-circle me-1" />
-                Code Testing
-              </p>
-              <p>
-                <TiTick className="text-white bg-primary rounded-circle me-1" />
-                App force update system from server.
-              </p>
-              <p>
-                <TiTick className="text-white bg-primary rounded-circle me-1" />
-                User can make wishlist.
-              </p>
+              {features?.map((feature, index) => (
+                <p key={index}>
+                  <TiTick className="text-white bg-primary rounded-circle me-1" />
+                  {feature}
+                </p>
+              ))}
             </div>
-            <Button>Buy Now</Button>
+            <a
+              className="btn btn-primary"
+              target="_blank"
+              rel="noreferrer"
+              href={courseDetails[0]?.course_link}
+            >
+              Buy Now
+            </a>
           </Col>
           <Col lg={6} md={6} sm={12}>
             <Player>
-              <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
+              <source src={video} />
               <BigPlayButton position="center" />
             </Player>
           </Col>
